@@ -8,7 +8,10 @@
     "title": "QA Automation in Action",
     "description": ""
   },
-  "socialnetwork": {},
+  "socialnetwork": {
+    "email": "serhii,.s.korol@gmail.com",
+    "github": "sskorol"
+  },
   "theme": {
     "name": "casper"
   }

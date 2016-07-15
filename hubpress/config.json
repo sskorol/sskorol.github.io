@@ -4,7 +4,12 @@
     "repositoryName": "sskorol.github.io",
     "branch": "master"
   },
+  "site": {
+    "title": "QA Automation in Action",
+    "description": ""
+  },
+  "socialnetwork": {},
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }

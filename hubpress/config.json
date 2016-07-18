@@ -6,13 +6,13 @@
   },
   "site": {
     "title": "QA Automation in Action",
-    "description": ""
+    "description": "Useful Java-oriented articles for QAA engineers"
   },
   "socialnetwork": {
     "email": "serhii.s.korol@gmail.com",
     "github": "sskorol"
   },
   "theme": {
-    "name": "ichi"
+    "name": "roon"
   }
 }

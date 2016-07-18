@@ -157,4 +157,4 @@ That's pretty much it. link:https://github.com/sskorol/docker-selenium-samples[d
 
 And here's produced output demo:
 
-video::oxanT-d48N0[youtube,width=1024,height=768]
+video::oxanT-d48N0[youtube,width=800,height=600]

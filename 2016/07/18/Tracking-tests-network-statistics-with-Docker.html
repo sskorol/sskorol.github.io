@@ -25,7 +25,7 @@
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 
-    <link rel="stylesheet" type="text/css" href="//sskorol.github.io/themes/uno/assets/css/uno.css?v=1468873074368" />
+    <link rel="stylesheet" type="text/css" href="//sskorol.github.io/themes/uno/assets/css/uno.css?v=1468873128845" />
 
     <link rel="canonical" href="https://sskorol.github.io/2016/07/18/Tracking-tests-network-statistics-with-Docker.html" />
     <meta name="referrer" content="origin" />
@@ -140,8 +140,9 @@ null
     </header>
 
     <section class="post tag-browsermob-proxy tag-webdriver tag-allure tag-docker tag-harviewer tag-java tag-testng">
-      <div class="sect3">
-<h4 id="_docker_configuration">Docker configuration</h4>
+      <div class="sect1">
+<h2 id="_docker_configuration">Docker configuration</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Raising newly built image would be quite simple with a help of <code>docker-compose</code>. Here&#8217;s a sample BMP / Selenium Grid configuration, which will help you to link all containers together:</p>
 </div>
@@ -187,7 +188,7 @@ browsermobproxy:
 </div>
 <div class="paragraph">
 <p>If you missed my <a href="http://qa-automation-notes.blogspot.com/2016/04/docker-selenium-and-bit-of-allure-how.html">article</a> about <code>docker-selenium</code> customization, you can pull above images from appropriate <a href="https://github.com/sskorol/docker-selenium">fork</a>.
-==== HAR viewer
+== HAR viewer
 To provide extensive network statistics in test results reports, we&#8217;ll use one of the best <a href="http://www.softwareishard.com/blog/har-viewer">HAR Viewer</a>, which supports really nice embedded mode.</p>
 </div>
 <div class="paragraph">
@@ -236,12 +237,12 @@ To provide extensive network statistics in test results reports, we&#8217;ll use
 </div>
 <div class="paragraph">
 <p>Note that <code>{{link}}</code> is a mandatory reference to the HAR file, produced while test execution. I left <code>{{height}}</code> option configurable as well, as default value is quite low, and you may want to manage it by yourself depending on screen resolution.
-==== HAR storage
+== HAR storage
 A bit painful topic. I&#8217;ve already played with <a href="https://github.com/pavel-paulau/harstorage">harstorage</a> project, but it seems quite unstable with latest version of BMP, and requires pretty old software dependencies.</p>
 </div>
 <div class="paragraph">
 <p>To avoid dependencies hell and configuration overhead, we&#8217;ll use much easier approach. Produced HAR files will be stored on a lightweight Web Server, e.g. <a href="https://www.lighttpd.net">lighttpd</a>, and then referenced in code while HAR template generation.
-==== REST Browsermob Proxy client
+== REST Browsermob Proxy client
 To establish connection with <code>docker-browsermob-proxy</code> image via REST we need to find out its internal IP address first. Here&#8217;s a script, which could help us:</p>
 </div>
 <div class="listingblock">
@@ -284,8 +285,10 @@ this.browserMobProxy.newHar(this.initialPageId, true, true, true);</code></pre>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_har_files_processing">HAR files processing</h4>
+</div>
+<div class="sect1">
+<h2 id="_har_files_processing">HAR files processing</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Depending on proxy server location, network configuration and HAR size, it could take long to retrieve recorded network statistics. To avoid wasting time on HAR processing, we&#8217;ll supply it async via <code>CompletableFuture</code>.</p>
 </div>
@@ -328,6 +331,7 @@ public static byte[] attachHtml(String name, String templateName, Map&lt;String,
 </div>
 </div>
 </div>
+</div>
     </section>
 
   </article>
@@ -356,7 +360,7 @@ public static byte[] attachHtml(String name, String templateName, Map&lt;String,
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//sskorol.github.io/themes/uno/assets/js/main.js?v=1468873074368"></script>
+    <script type="text/javascript" src="//sskorol.github.io/themes/uno/assets/js/main.js?v=1468873128845"></script>
     
 
 </body>

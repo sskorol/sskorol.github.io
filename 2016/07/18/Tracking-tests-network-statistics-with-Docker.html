@@ -38,9 +38,9 @@
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
     <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
 
-    <link rel="stylesheet" href="//sskorol.github.io/themes/ghostium/assets/css/main.min.css?v=1468875392820"/>
-    <link rel="stylesheet" href="//sskorol.github.io/themes/ghostium/assets/css/custom.css?v=1468875392820"/>
-    <link rel="stylesheet" href="//sskorol.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1468875392820"/>
+    <link rel="stylesheet" href="//sskorol.github.io/themes/ghostium/assets/css/main.min.css?v=1468875515279"/>
+    <link rel="stylesheet" href="//sskorol.github.io/themes/ghostium/assets/css/custom.css?v=1468875515279"/>
+    <link rel="stylesheet" href="//sskorol.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1468875515279"/>
 
 
 
@@ -70,7 +70,7 @@
       GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
     </script>
 
-    <script src="//sskorol.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1468875392820"></script>
+    <script src="//sskorol.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1468875515279"></script>
 
     <link rel="canonical" href="https://sskorol.github.io/2016/07/18/Tracking-tests-network-statistics-with-Docker.html" />
     <meta name="referrer" content="origin" />
@@ -172,7 +172,7 @@ null
                 <a href="#disqus_thread" data-disqus-identifier="">Comments</a>
               </li>
             </ul>
-            <h1 itemprop="name headline" class="post-title"><a href="/" itemprop="url" data-pjax title="Tracking tests&#x27; network statistics with Docker">Tracking tests&#x27; network statistics with Docker</a></h1>
+            <h1 itemprop="name headline" class="post-title"><a href="https://sskorol.github.io/2016/07/18/Tracking-tests-network-statistics-with-Docker.html" itemprop="url" data-pjax title="Tracking tests&#x27; network statistics with Docker">Tracking tests&#x27; network statistics with Docker</a></h1>
             <!--h2 itemprop="about" class="post-subtitle"></h2-->
           </header>
           <aside class="post-side">
@@ -205,7 +205,7 @@ null
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-YAML" data-lang="YAML">seleniumhub:
+<pre class="highlightjs highlight"><code class="language-YAML" data-lang="YAML">seleniumhub:
  image: sskorol/hub:2.53.1
  ports:
  - "4444:4444"
@@ -262,7 +262,7 @@ browsermobproxy:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-html" data-lang="html">&lt;!DOCTYPE HTML&gt;
+<pre class="highlightjs highlight"><code class="language-html" data-lang="html">&lt;!DOCTYPE HTML&gt;
 &lt;html&gt;
 &lt;head&gt;
     &lt;meta charset="utf-8"&gt;
@@ -289,7 +289,7 @@ browsermobproxy:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-javascript" data-lang="javascript">(function () {
+<pre class="highlightjs highlight"><code class="language-javascript" data-lang="javascript">(function () {
     var har = document.createElement("script");
     har.src = "http://www.softwareishard.com/har/viewer/har.js";
     har.setAttribute("id", "har");
@@ -322,7 +322,7 @@ browsermobproxy:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">#!/bin/bash
+<pre class="highlightjs highlight"><code class="language-bash" data-lang="bash">#!/bin/bash
 PROXY_NAME=`docker ps --format {{.Names}} | grep 'proxy'`
 IP=`docker inspect --format {{.NetworkSettings.IPAddress}} $PROXY_NAME`
 echo $IP</code></pre>
@@ -342,7 +342,7 @@ echo $IP</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">this.browserMobProxy = new BrowsermobProxyRestClient(this.ip, port);
+<pre class="highlightjs highlight"><code class="language-java" data-lang="java">this.browserMobProxy = new BrowsermobProxyRestClient(this.ip, port);
 this.port = browserMobProxy.getPort();
 this.browserMobProxy.setPort(this.port);
 this.browserMobProxy.newHar(this.initialPageId, true, true, true);</code></pre>
@@ -353,7 +353,7 @@ this.browserMobProxy.newHar(this.initialPageId, true, true, true);</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public Proxy getSeleniumProxy() {
+<pre class="highlightjs highlight"><code class="language-java" data-lang="java">public Proxy getSeleniumProxy() {
 	final String actualProxy = ip + ":" + port;
 	return new Proxy().setHttpProxy(actualProxy).setFtpProxy(actualProxy).setSslProxy(actualProxy);
 }</code></pre>
@@ -369,7 +369,7 @@ this.browserMobProxy.newHar(this.initialPageId, true, true, true);</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">CompletableFuture.supplyAsync(() -&gt; proxy.getBrowserMobProxy().getHarAsString())
+<pre class="highlightjs highlight"><code class="language-java" data-lang="java">CompletableFuture.supplyAsync(() -&gt; proxy.getBrowserMobProxy().getHarAsString())
 	.whenComplete((har, err) -&gt; {
 		if (saveHar(HTTPD_DIR + File.separator + harName, har))
 			attachHtml(attachmentName, HAR_TEMPLATE, getScope(harAddress, HAR_VIEW_HEIGHT));
@@ -382,7 +382,7 @@ this.browserMobProxy.newHar(this.initialPageId, true, true, true);</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">@Attachment(value = "{0}", type = "text/html")
+<pre class="highlightjs highlight"><code class="language-java" data-lang="java">@Attachment(value = "{0}", type = "text/html")
 public static byte[] attachHtml(String name, String templateName, Map&lt;String, Object&gt; args) {
 	String outName = "target" + File.separator + "attachment" + COUNTER.incrementAndGet();
 	try {
@@ -469,7 +469,7 @@ public static byte[] attachHtml(String name, String templateName, Map&lt;String,
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script src="//sskorol.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1468875392820"></script>
+    <script src="//sskorol.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1468875515279"></script>
 
 
   </body>

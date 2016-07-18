@@ -38,9 +38,9 @@
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
     <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
 
-    <link rel="stylesheet" href="//sskorol.github.io/themes/ghostium/assets/css/main.min.css?v=1468870894369"/>
-    <link rel="stylesheet" href="//sskorol.github.io/themes/ghostium/assets/css/custom.css?v=1468870894369"/>
-    <link rel="stylesheet" href="//sskorol.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1468870894369"/>
+    <link rel="stylesheet" href="//sskorol.github.io/themes/ghostium/assets/css/main.min.css?v=1468871088746"/>
+    <link rel="stylesheet" href="//sskorol.github.io/themes/ghostium/assets/css/custom.css?v=1468871088746"/>
+    <link rel="stylesheet" href="//sskorol.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1468871088746"/>
 
 
 
@@ -70,7 +70,7 @@
       GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
     </script>
 
-    <script src="//sskorol.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1468870894369"></script>
+    <script src="//sskorol.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1468871088746"></script>
 
     <link rel="canonical" href="https://sskorol.github.io/2016/07/18/Tracking-tests-network-statistics-with-Docker.html" />
     <meta name="referrer" content="origin" />
@@ -78,7 +78,7 @@
     <meta property="og:site_name" content="QA Automation in Action" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Tracking tests&#x27; network statistics with Docker" />
-    <meta property="og:description" content="Browsermob Proxy Docker image To be able to use the following example, you&amp;#8217;ll need to build docker-browsermob-proxy first. This base Docker image contains latest (2.1.1) Browsermob Proxy (BMP) version. Docker configuration Raising newly built image would be quite simple with a help of docker-compose. Here&amp;#8217;" />
+    <meta property="og:description" content="Docker configuration Raising newly built image would be quite simple with a help of docker-compose. Here&amp;#8217;s a sample BMP / Selenium Grid configuration, which will help you to link all containers together: seleniumhub:  image: sskorol/hub:2.53.1  ports:  - &quot;4444:4444&quot; firefoxnode:  image: sskorol/node-firefox-debug:2.53." />
     <meta property="og:url" content="https://sskorol.github.io/2016/07/18/Tracking-tests-network-statistics-with-Docker.html" />
     <meta property="article:tag" content="browsermob-proxy" />
     <meta property="article:tag" content=" webdriver" />
@@ -90,7 +90,7 @@
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Tracking tests&#x27; network statistics with Docker" />
-    <meta name="twitter:description" content="Browsermob Proxy Docker image To be able to use the following example, you&amp;#8217;ll need to build docker-browsermob-proxy first. This base Docker image contains latest (2.1.1) Browsermob Proxy (BMP) version. Docker configuration Raising newly built image would be quite simple with a help of docker-compose. Here&amp;#8217;" />
+    <meta name="twitter:description" content="Docker configuration Raising newly built image would be quite simple with a help of docker-compose. Here&amp;#8217;s a sample BMP / Selenium Grid configuration, which will help you to link all containers together: seleniumhub:  image: sskorol/hub:2.53.1  ports:  - &quot;4444:4444&quot; firefoxnode:  image: sskorol/node-firefox-debug:2.53." />
     <meta name="twitter:url" content="https://sskorol.github.io/2016/07/18/Tracking-tests-network-statistics-with-Docker.html" />
     
     <script type="application/ld+json">
@@ -190,12 +190,6 @@ null
           </aside>
           <div itemprop="articleBody" class="post-body">
             <div class="sect3">
-<h4 id="_browsermob_proxy_docker_image">Browsermob Proxy Docker image</h4>
-<div class="paragraph">
-<p>To be able to use the following example, you&#8217;ll need to build <a href="https://github.com/sskorol/docker-browsermob-proxy" target="_blank">docker-browsermob-proxy</a> first. This base Docker image contains latest (2.1.1) <a href="https://github.com/lightbody/browsermob-proxy">Browsermob Proxy (BMP)</a> version.</p>
-</div>
-</div>
-<div class="sect3">
 <h4 id="_docker_configuration">Docker configuration</h4>
 <div class="paragraph">
 <p>Raising newly built image would be quite simple with a help of <code>docker-compose</code>. Here&#8217;s a sample BMP / Selenium Grid configuration, which will help you to link all containers together:</p>
@@ -241,13 +235,9 @@ browsermobproxy:
 </div>
 </div>
 <div class="paragraph">
-<p>If you missed my <a href="http://qa-automation-notes.blogspot.com/2016/04/docker-selenium-and-bit-of-allure-how.html">article</a> about <code>docker-selenium</code> customization, you can pull above images from appropriate <a href="https://github.com/sskorol/docker-selenium">fork</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_har_viewer">HAR viewer</h4>
-<div class="paragraph">
-<p>To provide extensive network statistics in test results reports, we&#8217;ll use one of the best <a href="http://www.softwareishard.com/blog/har-viewer">HAR Viewer</a>, which supports really nice embedded mode.</p>
+<p>If you missed my <a href="http://qa-automation-notes.blogspot.com/2016/04/docker-selenium-and-bit-of-allure-how.html">article</a> about <code>docker-selenium</code> customization, you can pull above images from appropriate <a href="https://github.com/sskorol/docker-selenium">fork</a>.
+==== HAR viewer
+To provide extensive network statistics in test results reports, we&#8217;ll use one of the best <a href="http://www.softwareishard.com/blog/har-viewer">HAR Viewer</a>, which supports really nice embedded mode.</p>
 </div>
 <div class="paragraph">
 <p>Java implementation requires both front-end and backend involvement. You may already know that <a href="http://allure.qatools.ru">Allure</a> supports <code>html</code> attachments. To be able to use embedded HAR Viewer, we need to create our own template first. This could be done using <a href="https://github.com/spullara/mustache.java">mustache</a> library.</p>
@@ -294,22 +284,14 @@ browsermobproxy:
 </div>
 </div>
 <div class="paragraph">
-<p>Note that <code>{{link}}</code> is a mandatory reference to the HAR file, produced while test execution. I left <code>{{height}}</code> option configurable as well, as default value is quite low, and you may want to manage it by yourself depending on screen resolution.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_har_storage">HAR storage</h4>
-<div class="paragraph">
-<p>A bit painful topic. I&#8217;ve already played with <a href="https://github.com/pavel-paulau/harstorage">harstorage</a> project, but it seems quite unstable with latest version of BMP, and requires pretty old software dependencies.</p>
+<p>Note that <code>{{link}}</code> is a mandatory reference to the HAR file, produced while test execution. I left <code>{{height}}</code> option configurable as well, as default value is quite low, and you may want to manage it by yourself depending on screen resolution.
+==== HAR storage
+A bit painful topic. I&#8217;ve already played with <a href="https://github.com/pavel-paulau/harstorage">harstorage</a> project, but it seems quite unstable with latest version of BMP, and requires pretty old software dependencies.</p>
 </div>
 <div class="paragraph">
-<p>To avoid dependencies hell and configuration overhead, we&#8217;ll use much easier approach. Produced HAR files will be stored on a lightweight Web Server, e.g. <a href="https://www.lighttpd.net">lighttpd</a>, and then referenced in code while HAR template generation.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_rest_browsermob_proxy_client">REST Browsermob Proxy client</h4>
-<div class="paragraph">
-<p>To establish connection with <code>docker-browsermob-proxy</code> image via REST we need to find out its internal IP address first. Here&#8217;s a script, which could help us:</p>
+<p>To avoid dependencies hell and configuration overhead, we&#8217;ll use much easier approach. Produced HAR files will be stored on a lightweight Web Server, e.g. <a href="https://www.lighttpd.net">lighttpd</a>, and then referenced in code while HAR template generation.
+==== REST Browsermob Proxy client
+To establish connection with <code>docker-browsermob-proxy</code> image via REST we need to find out its internal IP address first. Here&#8217;s a script, which could help us:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -457,7 +439,7 @@ public static byte[] attachHtml(String name, String templateName, Map&lt;String,
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script src="//sskorol.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1468870894369"></script>
+    <script src="//sskorol.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1468871088746"></script>
 
 
   </body>

@@ -8,13 +8,13 @@
     "title": "QA Automation in Action",
     "description": "Useful Java-oriented articles for QAA engineers",
     "cover": "",
-    "postsPerPage": "10"
+    "postsPerPage": ""
   },
   "socialnetwork": {
     "email": "serhii.s.korol@gmail.com",
     "github": "sskorol"
   },
   "theme": {
-    "name": "uno-zen"
+    "name": "uno"
   }
 }

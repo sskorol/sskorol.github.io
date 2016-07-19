@@ -2,7 +2,7 @@
 :hp-tags: browsermob-proxy, webdriver, allure, docker, harviewer, java, testng
 :published_at: 2016-07-18
 :source-highlighter: highlight.js
-:hp-image: https://github.com/sskorol/sskorol.github.io/blob/master/covers/docker-har.png
+:hp-image: https://sskorol.github.io/blob/covers/docker-har.png
 
 == Browsermob Proxy Docker image
 To be able to use the following example, you'll need to build link:https://github.com/sskorol/docker-browsermob-proxy[docker-browsermob-proxy^] first. This base Docker image contains latest (2.1.1) link:https://github.com/lightbody/browsermob-proxy[Browsermob Proxy (BMP)] version.

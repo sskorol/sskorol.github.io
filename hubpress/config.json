@@ -7,8 +7,8 @@
   "site": {
     "title": "QA Automation in Action",
     "description": "Useful Java-oriented articles for QAA engineers",
-    "logo": "http://blog.qatestlab.com/wp-content/uploads/2011/03/Test_Automation.jpg",
-    "cover": "/images/full-pic.jpg",
+    "logo": "/images/logo.jpg",
+    "cover": "/images/back.jpg",
     "postsPerPage": ""
   },
   "socialnetwork": {

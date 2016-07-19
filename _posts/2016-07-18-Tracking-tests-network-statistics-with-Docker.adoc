@@ -2,6 +2,7 @@
 :hp-tags: browsermob-proxy, webdriver, allure, docker, harviewer, java, testng
 :published_at: 2016-07-18
 :source-highlighter: highlight.js
+:hp-image: docker-har.png
 
 image::docker-har.png[]
 

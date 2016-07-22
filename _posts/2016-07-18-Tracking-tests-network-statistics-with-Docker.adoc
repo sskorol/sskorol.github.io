@@ -160,4 +160,4 @@ That's pretty much it. link:https://github.com/sskorol/docker-selenium-samples[d
 
 And here's produced output demo:
 
-video::oxanT-d48N0[youtube,width=600,height=400]
+video::oxanT-d48N0[youtube,width=640,height=480]

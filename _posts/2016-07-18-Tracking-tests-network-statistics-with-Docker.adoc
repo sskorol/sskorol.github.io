@@ -11,7 +11,7 @@ To be able to use the following example, you'll need to build link:https://githu
 
 == Docker configuration
 Raising newly built image would be quite simple with a help of `docker-compose`. Here's a sample BMP / Selenium Grid configuration, which will help you to link all containers together:
-[source,YAML]
+[source,Yaml]
 ----
 seleniumhub:
  image: sskorol/hub:2.53.1
@@ -58,7 +58,7 @@ To provide extensive network statistics in test results reports, we'll use one o
 Java implementation requires both front-end and backend involvement. You may already know that link:http://allure.qatools.ru[Allure] supports `html` attachments. To be able to use embedded HAR Viewer, we need to create our own template first. This could be done using link:https://github.com/spullara/mustache.java[mustache] library.
 
 Template may look like the following:
-[source,html]
+[source,Html]
 ----
 <!DOCTYPE HTML>
 <html>
@@ -82,7 +82,7 @@ Template may look like the following:
 </html>
 ----
 Where `har-viewer.js` is the official script for HAR Viewer embedding.
-[source,javascript]
+[source,JavaScript]
 ----
 (function () {
     var har = document.createElement("script");
@@ -101,7 +101,7 @@ To avoid dependencies hell and configuration overhead, we'll use much easier app
 
 == REST Browsermob Proxy client
 To establish connection with `docker-browsermob-proxy` image via REST we need to find out its internal IP address first. Here's a script, which could help us:
-[source,bash]
+[source,Bash]
 ----
 #!/bin/bash
 PROXY_NAME=`docker ps --format {{.Names}} | grep 'proxy'`
@@ -115,7 +115,7 @@ REST client is available on link:https://github.com/sskorol/browsermob-proxy-res
 To simplify interaction with proxy there was created a link:https://github.com/sskorol/docker-selenium-samples/blob/master/src/main/java/com/blogspot/notes/automation/qa/core/ProxyServer.java[ProxyServer] wrapper, which allows establishing connection with a remote server. As I've mentioned above, IP address is exposed dynamically, but default port (9090) is consumed from link:https://github.com/sskorol/docker-selenium-samples/blob/master/src/test/resources/properties/config.properties[config.properties].
 
 After new BMP instance creation we need to obtain a port, which will be used by `WebDriver`. Now we're ready to send a request on HAR file creation. 
-[source,java]
+[source,Java]
 ----
 this.browserMobProxy = new BrowsermobProxyRestClient(this.ip, port);
 this.port = browserMobProxy.getPort();
@@ -123,7 +123,7 @@ this.browserMobProxy.setPort(this.port);
 this.browserMobProxy.newHar(this.initialPageId, true, true, true);
 ----
 That's all we need for getting Selenium Proxy instance.
-[source,java]
+[source,Java]
 ----
 public Proxy getSeleniumProxy() {
 	final String actualProxy = ip + ":" + port;
@@ -133,7 +133,7 @@ public Proxy getSeleniumProxy() {
 
 == HAR files processing
 Depending on proxy server location, network configuration and HAR size, it could take long to retrieve recorded network statistics. To avoid wasting time on HAR processing, we'll supply it async via `CompletableFuture`.
-[source,java]
+[source,Java]
 ----
 CompletableFuture.supplyAsync(() -> proxy.getBrowserMobProxy().getHarAsString())
 	.whenComplete((har, err) -> {
@@ -143,7 +143,7 @@ CompletableFuture.supplyAsync(() -> proxy.getBrowserMobProxy().getHarAsString())
 	});
 ----
 If HAR file is successfully saved in a shared httpd folder, we'll use Allure annotations to perform custom html attachment.
-[source,java]
+[source,Java]
 ----
 @Attachment(value = "{0}", type = "text/html")
 public static byte[] attachHtml(String name, String templateName, Map<String, Object> args) {

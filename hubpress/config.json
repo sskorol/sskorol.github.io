@@ -9,7 +9,8 @@
     "description": "Useful Java-oriented articles for QAA engineers",
     "logo": "/images/logo.jpg",
     "cover": "/images/back.jpg",
-    "postsPerPage": ""
+    "postsPerPage": "",
+    "disqus": "comments"
   },
   "socialnetwork": {
     "email": "serhii.s.korol@gmail.com",
@@ -19,6 +20,6 @@
     "github": "https://github.com/sskorol"
   },
   "theme": {
-    "name": "uno-zen"
+    "name": "saga"
   }
 }

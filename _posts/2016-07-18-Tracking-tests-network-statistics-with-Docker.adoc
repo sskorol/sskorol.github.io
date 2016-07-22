@@ -11,7 +11,7 @@ To be able to use the following example, you'll need to build link:https://githu
 
 == Docker configuration
 Raising newly built image would be quite simple with a help of `docker-compose`. Here's a sample BMP / Selenium Grid configuration, which will help you to link all containers together:
-[source,Yaml]
+[source,YAML]
 ----
 seleniumhub:
  image: sskorol/hub:2.53.1
@@ -58,7 +58,7 @@ To provide extensive network statistics in test results reports, we'll use one o
 Java implementation requires both front-end and backend involvement. You may already know that link:http://allure.qatools.ru[Allure] supports `html` attachments. To be able to use embedded HAR Viewer, we need to create our own template first. This could be done using link:https://github.com/spullara/mustache.java[mustache] library.
 
 Template may look like the following:
-[source,Html]
+[source,Handlebars]
 ----
 <!DOCTYPE HTML>
 <html>

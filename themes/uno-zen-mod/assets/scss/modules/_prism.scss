@@ -1,79 +1,80 @@
-/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript&plugins=line-highlight+show-language */
-
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+apacheconf+asciidoc+bash+batch+c+csharp+cpp+diff+docker+git+handlebars+java+json+nginx+powershell+properties+rest+sql+vim+yaml&plugins=line-highlight+line-numbers+show-language+jsonp-highlight+highlight-keywords+previewer-base+unescaped-markup+normalize-whitespace+keep-markup */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
  * @author Lea Verou
  */
 
-code,
-pre {
-  font-family: $code-font;
-  font-size: 90%;
-  line-height: 1.5;
+code[class*="language-"],
+pre[class*="language-"] {
+  color: black;
+  background: none;
+  text-shadow: 0 1px white;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
-  word-wrap: normal;
   word-break: normal;
-  tab-size: 2;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
   hyphens: none;
-  color: black;
-  text-shadow: 0 1px white;
-  direction: ltr;
 }
 
-pre::selection,
-code::selection {
-  background: #b3d4fc;
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
   text-shadow: none;
+  background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: #b3d4fc;
 }
 
 @media print {
-  code,
-  pre {
+  code[class*="language-"],
+  pre[class*="language-"] {
     text-shadow: none;
   }
-
 }
 
 /* Code blocks */
-pre {
+pre[class*="language-"] {
   padding: 1em;
-  margin: 2.5rem 0;
+  margin: .5em 0;
   overflow: auto;
 }
 
-:not(pre) > code,
-pre {
-  border: 1px solid rgba(0, 0, 0, .15);
-  background: #fbfaf8;
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #f5f2f0;
 }
 
 /* Inline code */
-:not(pre) > code {
-  // slack style
-  padding: 1px 3px;
-  font-family: $code-font;
-  font-size: 72%;
-  line-height: 72%;
-  white-space: normal;
-  color: #c25;
-  border: 1px solid #e1e1e8;
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
   border-radius: .3em;
-  background-color: #f7f7f9;
-  text-shadow: 0 1px #fff;
+  white-space: normal;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #969896;
+  color: slategray;
 }
 
 .token.punctuation {
-  color: #333;
+  color: #999;
 }
 
 .namespace {
@@ -87,7 +88,7 @@ pre {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  color: #0086b3;
+  color: #905;
 }
 
 .token.selector,
@@ -96,7 +97,7 @@ pre {
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: #183691;
+  color: #690;
 }
 
 .token.operator,
@@ -104,17 +105,18 @@ pre {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  color: #a71d5d;
+  color: #a67f59;
+  background: hsla(0, 0%, 100%, .5);
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: #a71d5d;
+  color: #07a;
 }
 
 .token.function {
-  color: #0086b3;
+  color: #DD4A68;
 }
 
 .token.regex,
@@ -127,7 +129,6 @@ pre {
 .token.bold {
   font-weight: bold;
 }
-
 .token.italic {
   font-style: italic;
 }
@@ -141,26 +142,183 @@ pre[data-line] {
   padding: 1em 0 1em 3em;
 }
 
+.line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em; /* Same as .prism’s padding-top */
+
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+
+  pointer-events: none;
+
+  line-height: inherit;
+  white-space: pre;
+}
+
+.line-highlight:before,
+.line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+.line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}
+
+pre.line-numbers {
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+  position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: 100%;
+  left: -3.8em;
+  width: 3em; /* works for line-numbers below 1000 lines */
+  letter-spacing: -1px;
+  border-right: 1px solid #999;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+
+.line-numbers-rows > span {
+  pointer-events: none;
+  display: block;
+  counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+  content: counter(linenumber);
+  color: #999;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
+}
 div.prism-show-language {
   position: relative;
 }
 
-div.prism-show-language > div.prism-show-language-label[data-language] {
+div.prism-show-language > div.prism-show-language-label {
+  color: black;
+  background-color: #CFCFCF;
+  display: inline-block;
   position: absolute;
-  top: 0;
-  right: 0;
   bottom: auto;
   left: auto;
-  z-index: 1;
-  display: inline-block;
+  top: 0;
+  right: 0;
   width: auto;
   height: auto;
-  padding: 0 .5em;
-  font-size: .9em;
-  transform: none;
-  color: black;
+  font-size: 0.9em;
   border-radius: 0 0 0 5px;
-  background-color: #cfcfcf;
-  box-shadow: none;
+  padding: 0 0.5em;
   text-shadow: none;
+  z-index: 1;
+  box-shadow: none;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
 }
+
+.prism-previewer,
+.prism-previewer:before,
+.prism-previewer:after {
+  position: absolute;
+  pointer-events: none;
+}
+.prism-previewer,
+.prism-previewer:after {
+  left: 50%;
+}
+.prism-previewer {
+  margin-top: -48px;
+  width: 32px;
+  height: 32px;
+  margin-left: -16px;
+
+  opacity: 0;
+  -webkit-transition: opacity .25s;
+  -o-transition: opacity .25s;
+  transition: opacity .25s;
+}
+.prism-previewer.flipped {
+  margin-top: 0;
+  margin-bottom: -48px;
+}
+.prism-previewer:before,
+.prism-previewer:after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+}
+.prism-previewer:before {
+  top: -5px;
+  right: -5px;
+  left: -5px;
+  bottom: -5px;
+  border-radius: 10px;
+  border: 5px solid #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) inset, 0 0 10px rgba(0, 0, 0, 0.75);
+}
+
+.prism-previewer:after {
+  top: 100%;
+  width: 0;
+  height: 0;
+  margin: 5px 0 0 -7px;
+  border: 7px solid transparent;
+  border-color: rgba(255, 0, 0, 0);
+  border-top-color: #fff;
+}
+.prism-previewer.flipped:after {
+  top: auto;
+  bottom: 100%;
+  margin-top: 0;
+  margin-bottom: 5px;
+  border-top-color: rgba(255, 0, 0, 0);
+  border-bottom-color: #fff;
+}
+.prism-previewer.active {
+  opacity: 1;
+}
+/* Fallback, in case JS does not run, to ensure the code is at least visible */
+.lang-markup script[type='text/plain'],
+.language-markup script[type='text/plain'],
+script[type='text/plain'].lang-markup,
+script[type='text/plain'].language-markup {
+  display: block;
+  font: 100% Consolas, Monaco, monospace;
+  white-space: pre;
+  overflow: auto;
+}
+

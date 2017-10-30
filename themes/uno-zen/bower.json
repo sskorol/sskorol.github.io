@@ -2,13 +2,13 @@
   "name": "uno-zen",
   "description": "Minimalist and Elegant theme for Ghost",
   "homepage": "https://github.com/kikobeats/uno-zen",
-  "version": "2.7.0",
+  "version": "2.9.8",
   "authors": [
     "Kiko Beats <josefrancisco.verdu@gmail.com>"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/kikobeats/uno-zen"
+    "url": "git+https://github.com/kikobeats/uno-zen.git"
   },
   "bugs": {
     "url": "https://github.com/Kikobeats/uno-zen/issues"
@@ -22,12 +22,11 @@
     "zen"
   ],
   "dependencies": {
-    "animate.css": "*",
-    "fastclick": "*",
-    "fitvids": "*",
-    "ghostHunter": "git://github.com/i11ume/ghostHunter.git",
-    "pace": "*",
-    "reading-time": "*"
+    "fastclick": "latest",
+    "fitvids": "latest",
+    "instantclick": "latest",
+    "pace": "latest",
+    "reading-time": "latest"
   },
   "ignore": [
     "**/.*",

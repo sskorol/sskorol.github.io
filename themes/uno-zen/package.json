@@ -27,6 +27,7 @@
     "coffee-script": "latest",
     "gulp": "latest",
     "gulp-add-src": "latest",
+    "gulp-assets": "^0.2.2",
     "gulp-autoprefixer": "latest",
     "gulp-changed": "latest",
     "gulp-coffee": "latest",
@@ -43,5 +44,10 @@
   "engines": {
     "node": "~0.12.x"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "gulp-cssnano": "^2.1.2",
+    "gulp-dependency-install": "0.0.8",
+    "gulp-if": "^2.0.2"
+  }
 }

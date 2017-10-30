@@ -1,7 +1,237 @@
+<a name="2.9.8"></a>
+## 2.9.8 (2017-08-05)
+
+
+
+
+<a name="2.9.7"></a>
+## 2.9.7 (2017-08-05)
+
+* author email ([3f6624c](https://github.com/kikobeats/uno-zen/commit/3f6624c))
+* Ghost error to replace few key names ([6ba56b1](https://github.com/kikobeats/uno-zen/commit/6ba56b1))
+* removed a non existing url from showcase whihc failed the checks ([e24f512](https://github.com/kikobeats/uno-zen/commit/e24f512))
+* Update README.md ([6751b8f](https://github.com/kikobeats/uno-zen/commit/6751b8f))
+* docs(readme): add Greenkeeper badge ([1db15b1](https://github.com/kikobeats/uno-zen/commit/1db15b1))
+
+
+
+<a name="2.9.6"></a>
+## 2.9.6 (2017-06-25)
+
+* Fix backward compatibilty for cover image ([7f64345](https://github.com/kikobeats/uno-zen/commit/7f64345))
+
+
+
+<a name="2.9.5"></a>
+## 2.9.5 (2017-06-19)
+
+* Create README.md ([91c53b9](https://github.com/kikobeats/uno-zen/commit/91c53b9))
+* Removed the 404 ([0c4c978](https://github.com/kikobeats/uno-zen/commit/0c4c978))
+* Update Ghost badge ([e08e063](https://github.com/kikobeats/uno-zen/commit/e08e063))
+* Update node version ([c2deddc](https://github.com/kikobeats/uno-zen/commit/c2deddc))
+* Updated aside.hbs to 1.0 ([3d75ca9](https://github.com/kikobeats/uno-zen/commit/3d75ca9))
+* Updated error.hbs to 1.0 ([c986f75](https://github.com/kikobeats/uno-zen/commit/c986f75))
+
+
+
+<a name="2.9.4"></a>
+## 2.9.4 (2016-09-25)
+
+* Fix pjax for external post content ([fefe4ae](https://github.com/kikobeats/uno-zen/commit/fefe4ae))
+* Improve development workflow ([1941fa7](https://github.com/kikobeats/uno-zen/commit/1941fa7))
+
+
+
+<a name="2.9.3"></a>
+## 2.9.3 (2016-09-18)
+
+* Add `lang=en` as default ([07bad81](https://github.com/kikobeats/uno-zen/commit/07bad81))
+* Better minify ([c1e23cb](https://github.com/kikobeats/uno-zen/commit/c1e23cb))
+
+
+
+<a name="2.9.2"></a>
+## 2.9.2 (2016-07-26)
+
+* Fix error page font ([a19f837](https://github.com/kikobeats/uno-zen/commit/a19f837))
+
+
+
+<a name="2.9.1"></a>
+## 2.9.1 (2016-07-26)
+
+* Add Instantclick as pajax lib ([aca757a](https://github.com/kikobeats/uno-zen/commit/aca757a))
+* Fix error page css load ([d3949b5](https://github.com/kikobeats/uno-zen/commit/d3949b5))
+* Ignore cfg files ([cd302be](https://github.com/kikobeats/uno-zen/commit/cd302be))
+* Remove unnecessary dep ([db817ea](https://github.com/kikobeats/uno-zen/commit/db817ea))
+* Update ignore files ([17dbcd7](https://github.com/kikobeats/uno-zen/commit/17dbcd7))
+
+
+
+<a name="2.9.0"></a>
+# 2.9.0 (2016-06-13)
+
+* Adjust mark style ([850a4be](https://github.com/kikobeats/uno-zen/commit/850a4be))
+* Better dev reload ([9998f80](https://github.com/kikobeats/uno-zen/commit/9998f80))
+* javascript factor bundle ([22293ed](https://github.com/kikobeats/uno-zen/commit/22293ed))
+* Little Refactor ([08f0745](https://github.com/kikobeats/uno-zen/commit/08f0745))
+* Remove 5xx URL ([bdbbf8e](https://github.com/kikobeats/uno-zen/commit/bdbbf8e))
+* Update build process ([744d46e](https://github.com/kikobeats/uno-zen/commit/744d46e))
+* Use Google Search instead of GhostHunter ([94e0604](https://github.com/kikobeats/uno-zen/commit/94e0604))
+
+
+
+<a name="2.8.3"></a>
+## 2.8.3 (2016-06-01)
+
+* Remove unnecessary ([422da16](https://github.com/kikobeats/uno-zen/commit/422da16))
+* Update docs link ([19b09d5](https://github.com/kikobeats/uno-zen/commit/19b09d5))
+* Use the same date format ([77ceee8](https://github.com/kikobeats/uno-zen/commit/77ceee8))
+* Use title attribute with a tag ([61ef8ab](https://github.com/kikobeats/uno-zen/commit/61ef8ab))
+
+
+
+<a name="2.8.2"></a>
+## 2.8.2 (2016-05-23)
+
+* Adjust node version ([f74f27e](https://github.com/kikobeats/uno-zen/commit/f74f27e))
+* Adjust search icon ([06dbc32](https://github.com/kikobeats/uno-zen/commit/06dbc32))
+* Quote handlebars helpers ([d8a71dc](https://github.com/kikobeats/uno-zen/commit/d8a71dc))
+* Remove unnecessary dep ([b6818a8](https://github.com/kikobeats/uno-zen/commit/b6818a8))
+* Remove unnecessary escape ([1d854c8](https://github.com/kikobeats/uno-zen/commit/1d854c8))
+* Update README ([3ceeab0](https://github.com/kikobeats/uno-zen/commit/3ceeab0))
+* Update SHOWCASE.md ([849b60e](https://github.com/kikobeats/uno-zen/commit/849b60e))
+* Update SHOWCASE.md ([2192084](https://github.com/kikobeats/uno-zen/commit/2192084))
+* Upgrade Ghost version ([abee6a2](https://github.com/kikobeats/uno-zen/commit/abee6a2))
+* Use HTTPS as possible ([a0d7c07](https://github.com/kikobeats/uno-zen/commit/a0d7c07))
+* Use SASS @mixin & @extend correctly ([1da86e5](https://github.com/kikobeats/uno-zen/commit/1da86e5))
+
+
+
+<a name="2.8.1"></a>
+## 2.8.1 (2016-05-08)
+
+* Adjust style ([ef6b3c3](https://github.com/kikobeats/uno-zen/commit/ef6b3c3))
+
+
+
+<a name="2.8.0"></a>
+# 2.8.0 (2016-05-08)
+
+* Linkify post headers ([b5a0b63](https://github.com/kikobeats/uno-zen/commit/b5a0b63))
+* updated readme file with alternative installation instructions ([cbee6a2](https://github.com/kikobeats/uno-zen/commit/cbee6a2))
+
+
+
+<a name="2.7.9"></a>
+## 2.7.9 (2016-04-12)
+
+* Add @daleanthony as original design ([949fe29](https://github.com/kikobeats/uno-zen/commit/949fe29))
+
+
+
+<a name="2.7.8"></a>
+## 2.7.8 (2016-03-20)
+
+
+* Added new blog to showcase ([d7be966](https://github.com/kikobeats/uno-zen/commit/d7be966))
+* Apply effect in tag version as well. ([266f331](https://github.com/kikobeats/uno-zen/commit/266f331))
+* Merge pull request #183 from binaryfever/patch-1 ([93ff62a](https://github.com/kikobeats/uno-zen/commit/93ff62a))
+* Merge pull request #184 from Mooash/master ([4e1db0c](https://github.com/kikobeats/uno-zen/commit/4e1db0c))
+* Removing blog ([5c92c32](https://github.com/kikobeats/uno-zen/commit/5c92c32))
+* Update ([db0c527](https://github.com/kikobeats/uno-zen/commit/db0c527))
+
+
+
+<a name="2.7.7"></a>
+## 2.7.7 (2016-03-11)
+
+
+* 2.7.7 releases ([509a564](https://github.com/kikobeats/uno-zen/commit/509a564))
+* Add more stuff ([5c0ac0a](https://github.com/kikobeats/uno-zen/commit/5c0ac0a))
+* Add Uno Urban announcement 🎉 ([5702f48](https://github.com/kikobeats/uno-zen/commit/5702f48))
+* Update README.md ([8fc16c8](https://github.com/kikobeats/uno-zen/commit/8fc16c8))
+
+
+
+<a name="2.7.6"></a>
+## 2.7.6 (2016-02-23)
+
+
+* 2.7.6 releases ([b139bba](https://github.com/kikobeats/uno-zen/commit/b139bba))
+* Fix typo ([4624cff](https://github.com/kikobeats/uno-zen/commit/4624cff))
+* Remove unnecessary ([7a8567b](https://github.com/kikobeats/uno-zen/commit/7a8567b))
+
+
+
+<a name="2.7.5"></a>
+## 2.7.5 (2016-02-22)
+
+
+* 2.7.5 releases ([780d021](https://github.com/kikobeats/uno-zen/commit/780d021))
+* Fix line height ([6fb493a](https://github.com/kikobeats/uno-zen/commit/6fb493a))
+* Fix paged views ([6fee7d0](https://github.com/kikobeats/uno-zen/commit/6fee7d0))
+* Remove unnecessary ([c21188f](https://github.com/kikobeats/uno-zen/commit/c21188f))
+* Setup correctly font weight ([f95cdf6](https://github.com/kikobeats/uno-zen/commit/f95cdf6))
+* Setup correctly line-height ([1881c5d](https://github.com/kikobeats/uno-zen/commit/1881c5d))
+* setup root directory ([b4685cb](https://github.com/kikobeats/uno-zen/commit/b4685cb))
+* Use bold keyword ([9199dfd](https://github.com/kikobeats/uno-zen/commit/9199dfd))
+
+
+
+<a name="2.7.4"></a>
+## 2.7.4 (2016-02-20)
+
+
+* 2.7.4 releases ([58c7dac](https://github.com/kikobeats/uno-zen/commit/58c7dac))
+* adjust font base ([2bfbadc](https://github.com/kikobeats/uno-zen/commit/2bfbadc))
+* fix build ([6ed5cb2](https://github.com/kikobeats/uno-zen/commit/6ed5cb2))
+* Fix build ([26cd27a](https://github.com/kikobeats/uno-zen/commit/26cd27a))
+* Fix travis ([1392630](https://github.com/kikobeats/uno-zen/commit/1392630))
+* improve template ([45ca19d](https://github.com/kikobeats/uno-zen/commit/45ca19d))
+* upgrade node ([90e3564](https://github.com/kikobeats/uno-zen/commit/90e3564))
+
+
+
+<a name="2.7.3"></a>
+## 2.7.3 (2016-02-02)
+
+
+* 2.7.3 releases ([d4ab6cd](https://github.com/kikobeats/uno-zen/commit/d4ab6cd))
+* Adjust cover margins ([e9d257f](https://github.com/kikobeats/uno-zen/commit/e9d257f))
+* Adjust sidebar margins ([7e7ca13](https://github.com/kikobeats/uno-zen/commit/7e7ca13))
+* move into scripts ([72e9522](https://github.com/kikobeats/uno-zen/commit/72e9522))
+* Update README.md ([e4ca41a](https://github.com/kikobeats/uno-zen/commit/e4ca41a))
+
+
+
+<a name="2.7.2"></a>
+## 2.7.2 (2016-01-19)
+
+
+* 2.7.2 releases ([275a187](https://github.com/kikobeats/uno-zen/commit/275a187))
+* Fic W3C Validations ([7a45489](https://github.com/kikobeats/uno-zen/commit/7a45489))
+* Move external font into link tag ([cb1869a](https://github.com/kikobeats/uno-zen/commit/cb1869a))
+
+
+
+<a name="2.7.1"></a>
+## 2.7.1 (2016-01-19)
+
+
+* 2.7.1 releases ([27fe347](https://github.com/kikobeats/uno-zen/commit/27fe347))
+* edit readme for clarity ([0dc5cb5](https://github.com/kikobeats/uno-zen/commit/0dc5cb5))
+* fix grammar errors and edit for clarity ([524df2a](https://github.com/kikobeats/uno-zen/commit/524df2a))
+* Fix highlights code blocks ([220e75c](https://github.com/kikobeats/uno-zen/commit/220e75c))
+* Merge pull request #171 from martinms-usc/master ([fa245d0](https://github.com/kikobeats/uno-zen/commit/fa245d0))
+
+
+
 <a name="2.7.0"></a>
 # 2.7.0 (2016-01-09)
 
 
+* 2.7.0 releases ([e36ef50](https://github.com/kikobeats/uno-zen/commit/e36ef50))
 * Add 4ts.io blog as a showcase ([3e60322](https://github.com/kikobeats/uno-zen/commit/3e60322))
 * Add travis ([ef69dac](https://github.com/kikobeats/uno-zen/commit/ef69dac))
 * Add travis tests ([a09c269](https://github.com/kikobeats/uno-zen/commit/a09c269))
@@ -12,8 +242,8 @@
 * Merge pull request #168 from waja/post_list_headline ([c43f0dc](https://github.com/kikobeats/uno-zen/commit/c43f0dc))
 * Replace the https with http of 4ts.io blog ([7d7bf0f](https://github.com/kikobeats/uno-zen/commit/7d7bf0f))
 * This makes the headline of the post list page customizable. ([e81896c](https://github.com/kikobeats/uno-zen/commit/e81896c)), closes [#166](https://github.com/kikobeats/uno-zen/issues/166)
-* Update README.md ([260960d](https://github.com/kikobeats/uno-zen/commit/260960d))
 * Update README.md ([a0b0185](https://github.com/kikobeats/uno-zen/commit/a0b0185))
+* Update README.md ([260960d](https://github.com/kikobeats/uno-zen/commit/260960d))
 * Update showcase section ([4fceeab](https://github.com/kikobeats/uno-zen/commit/4fceeab))
 * Update SHOWCASE.md ([a48fb41](https://github.com/kikobeats/uno-zen/commit/a48fb41))
 * Update SHOWCASE.md ([108285f](https://github.com/kikobeats/uno-zen/commit/108285f))

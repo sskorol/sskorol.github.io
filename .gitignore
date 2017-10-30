@@ -1,3 +1,11 @@
 .idea
 target
 *.iml
+themes/uno-zen/node_modules
+themes/uno-zen/yarn.lock
+themes/uno-zen/package-lock.json
+themes/uno-zen/.travis.yml
+themes/uno-zen/.bowerrc
+themes/uno-zen/.bumpedrc
+themes/uno-zen/.editorconfig
+themes/uno-zen/.gitignore

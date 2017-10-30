@@ -121,7 +121,7 @@ this.browserMobProxy.setPort(this.port);
 this.browserMobProxy.newHar(this.initialPageId, true, true, true);
 ----
 That's all we need for getting Selenium Proxy instance.
-[source,java]
+[source,csharp]
 ----
 public Proxy getSeleniumProxy() {
 	final String actualProxy = ip + ":" + port;

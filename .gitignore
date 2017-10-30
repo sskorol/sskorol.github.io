@@ -9,3 +9,4 @@ themes/uno-zen/.bowerrc
 themes/uno-zen/.bumpedrc
 themes/uno-zen/.editorconfig
 themes/uno-zen/.gitignore
+themes/uno-zen/*.iml

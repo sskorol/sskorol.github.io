@@ -2,7 +2,8 @@
   "meta": {
     "username": "sskorol",
     "repositoryName": "sskorol.github.io",
-    "branch": "master"
+    "branch": "master",
+    "cname": ""
   },
   "site": {
     "title": "QA Automation in Action",
@@ -10,14 +11,21 @@
     "logo": "/images/logo.jpg",
     "cover": "/images/back.jpg",
     "postsPerPage": "",
-    "disqus": "qaa-in-action"
+    "disqus": "qaa-in-action",
+    "delay": "",
+    "googleAnalytics": ""
   },
   "socialnetwork": {
     "email": "serhii.s.korol@gmail.com",
     "twitter": "https://twitter.com/ss_korol",
     "googleplus": "https://plus.google.com/u/0/+SergeyKorol",
     "linkedin": "https://ua.linkedin.com/in/serhiikorol",
-    "github": "https://github.com/sskorol"
+    "github": "https://github.com/sskorol",
+    "facebook": "",
+    "instagram": "",
+    "pinterest": "",
+    "flickr": "",
+    "stackoverflow": "https://stackoverflow.com/users/8461668/sergey-korol"
   },
   "theme": {
     "name": "uno-zen"

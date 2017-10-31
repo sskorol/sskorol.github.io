@@ -1,0 +1,161 @@
+= Tracking functional tests' network statistics with Docker
+:hp-tags: browsermob-proxy, webdriver, allure, docker, harviewer, java, testng
+:published_at: 2016-07-18
+:source-highlighter: prism.js
+:hp-image: https://sskorol.github.io/covers/docker-har.png
+
+== Browsermob Proxy Docker image
+To be able to use the following example, you'll need to build link:https://github.com/sskorol/docker-browsermob-proxy[docker-browsermob-proxy^] first. This base Docker image contains latest (2.1.1) link:https://github.com/lightbody/browsermob-proxy[Browsermob Proxy (BMP)] version.
+
+== Docker configuration
+Raising newly built image would be quite simple with a help of `docker-compose`. Here's a sample BMP / Selenium Grid configuration, which will help you to link all containers together:
+[source,yaml]
+----
+seleniumhub:
+ image: sskorol/hub:2.53.1
+ ports:
+ - "4444:4444"
+firefoxnode:
+ image: sskorol/node-firefox-debug:2.53.1
+ volumes:
+ - ~/Work:/e2e/uploads
+ - ~/Work/tmp:/e2e/uploads/tmp
+ ports:
+ - "5900"
+ expose:
+ - "80"
+ links:
+ - seleniumhub:hub
+chromenode:
+ image: sskorol/node-chrome-debug:2.53.1
+ volumes:
+ - ~/Work:/e2e/uploads
+ - ~/Work/tmp:/e2e/uploads/tmp
+ ports:
+ - "5900"
+ expose:
+ - "80"
+ links:
+ - seleniumhub:hub
+browsermobproxy:
+ image: sskorol/browsermob-proxy:2.1.1
+ ports:
+ - "9090-9191:9090-9191"
+ expose:
+ - "9090-9191"
+ links:
+ - seleniumhub:hub_sel
+ - firefoxnode:node_ff
+ - chromenode:node_ch
+----
+If you missed my link:http://qa-automation-notes.blogspot.com/2016/04/docker-selenium-and-bit-of-allure-how.html[article] about `docker-selenium` customization, you can pull above images from appropriate link:https://github.com/sskorol/docker-selenium[fork].
+
+== HAR viewer
+To provide extensive network statistics in test results reports, we'll use one of the best link:http://www.softwareishard.com/blog/har-viewer[HAR Viewer], which supports really nice embedded mode.
+
+Java implementation requires both front-end and backend involvement. You may already know that link:http://allure.qatools.ru[Allure] supports `html` attachments. To be able to use embedded HAR Viewer, we need to create our own template first. This could be done using link:https://github.com/spullara/mustache.java[mustache] library.
+
+Template may look like the following:
+[source,handlebars]
+----
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="css/spinner.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"
+            integrity="sha256-8WqyJLuWKRBVhxXIL1jBDD7SDxU936oZkCnxQbWwJVw=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/har-viewer.js"></script>
+    <script>
+        $(window).load(function() {
+            $(".se-pre-con").fadeOut("slow");;
+        });
+    </script>
+</head>
+<body>
+<div id="loader" class="se-pre-con"></div>
+<div class="har" data-har="{{link}}" height="{{height}}px"></div>
+</body>
+</html>
+----
+Where `har-viewer.js` is the official script for HAR Viewer embedding.
+[source,javascript]
+----
+(function () {
+    var har = document.createElement("script");
+    har.src = "http://www.softwareishard.com/har/viewer/har.js";
+    har.setAttribute("id", "har");
+    har.setAttribute("async", "true");
+    document.documentElement.firstChild.appendChild(har);
+})();
+----
+Note that `{{link}}` is a mandatory reference to the HAR file, produced while test execution. I left `{{height}}` option configurable as well, as default value is quite low, and you may want to manage it by yourself depending on screen resolution.
+
+== HAR storage
+A bit painful topic. I've already played with link:https://github.com/pavel-paulau/harstorage[harstorage] project, but it seems quite unstable with latest version of BMP, and requires pretty old software dependencies.
+
+To avoid dependencies hell and configuration overhead, we'll use much easier approach. Produced HAR files will be stored on a lightweight Web Server, e.g. link:https://www.lighttpd.net[lighttpd], and then referenced in code while HAR template generation.
+
+== REST Browsermob Proxy client
+To establish connection with `docker-browsermob-proxy` image via REST we need to find out its internal IP address first. Here's a script, which could help us:
+[source,bash]
+----
+#!/bin/bash
+PROXY_NAME=`docker ps --format {{.Names}} | grep 'proxy'`
+IP=`docker inspect --format {{.NetworkSettings.IPAddress}} $PROXY_NAME`
+echo $IP
+----
+If we execute it from java code, we'll be able to access remote BMP instance running in Docker container.
+
+REST client is available on link:https://github.com/sskorol/browsermob-proxy-rest[GitHub]. So you may want to build it first before moving to next parts.
+
+To simplify interaction with proxy there was created a link:https://github.com/sskorol/docker-selenium-samples/blob/master/src/main/java/com/blogspot/notes/automation/qa/core/ProxyServer.java[ProxyServer] wrapper, which allows establishing connection with a remote server. As I've mentioned above, IP address is exposed dynamically, but default port (9090) is consumed from link:https://github.com/sskorol/docker-selenium-samples/blob/master/src/test/resources/properties/config.properties[config.properties].
+
+After new BMP instance creation we need to obtain a port, which will be used by `WebDriver`. Now we're ready to send a request on HAR file creation. 
+[source,java]
+----
+this.browserMobProxy = new BrowsermobProxyRestClient(this.ip, port);
+this.port = browserMobProxy.getPort();
+this.browserMobProxy.setPort(this.port);
+this.browserMobProxy.newHar(this.initialPageId, true, true, true);
+----
+That's all we need for getting Selenium Proxy instance.
+[source,java]
+----
+public Proxy getSeleniumProxy() {
+	final String actualProxy = ip + ":" + port;
+	return new Proxy().setHttpProxy(actualProxy).setFtpProxy(actualProxy).setSslProxy(actualProxy);
+}
+----
+
+== HAR files processing
+Depending on proxy server location, network configuration and HAR size, it could take long to retrieve recorded network statistics. To avoid wasting time on HAR processing, we'll supply it async via `CompletableFuture`.
+[source,java]
+----
+CompletableFuture.supplyAsync(() -> proxy.getBrowserMobProxy().getHarAsString())
+	.whenComplete((har, err) -> {
+		if (saveHar(HTTPD_DIR + File.separator + harName, har))
+			attachHtml(attachmentName, HAR_TEMPLATE, getScope(harAddress, HAR_VIEW_HEIGHT));
+		proxy.disposeProxy();
+	});
+----
+If HAR file is successfully saved in a shared httpd folder, we'll use Allure annotations to perform custom html attachment.
+[source,java]
+----
+@Attachment(value = "{0}", type = "text/html")
+public static byte[] attachHtml(String name, String templateName, Map<String, Object> args) {
+	String outName = "target" + File.separator + "attachment" + COUNTER.incrementAndGet();
+	try {
+		execute(templateName, outName, args);
+		return toByteArray(new File(outName));
+	} catch (Exception ignored) {
+		return new byte[0];
+	}
+}
+----
+That's pretty much it. link:https://github.com/sskorol/docker-selenium-samples[docker-selenium-samples] contains extensive examples working with proxy / video recording in Docker containers.
+
+And here's produced output demo:
+
+video::oxanT-d48N0[youtube,width=640,height=480]

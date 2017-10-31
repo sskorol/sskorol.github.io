@@ -21,5 +21,21 @@
   },
   "theme": {
     "name": "uno-zen"
+  },
+  "urls": {
+    "site": "https://sskorol.github.io",
+    "hubpress": "https://sskorol.github.io",
+    "theme": "//sskorol.github.io/themes/uno-zen",
+    "images": "https://sskorol.github.io/images"
+  },
+  "initialisationConfigComponent": {
+    "name": "initialise-configuration",
+    "computed": {},
+    "methods": {},
+    "staticRenderFns": [
+      null,
+      null,
+      null
+    ]
   }
 }

@@ -2,7 +2,7 @@
   "meta": {
     "username": "sskorol",
     "repositoryName": "sskorol.github.io",
-    "branch": "gh-pages",
+    "branch": "master",
     "cname": ""
   },
   "site": {
@@ -28,7 +28,7 @@
     "flickr": ""
   },
   "theme": {
-    "name": "uno-zen"
+    "name": "uno"
   },
   "urls": {
     "site": "https://sskorol.github.io",

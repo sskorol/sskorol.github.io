@@ -1,7 +1,7 @@
 = Tracking tests' network statistics with Docker
 :hp-tags: browsermob-proxy, webdriver, allure, docker, harviewer, java, testng
 :published_at: 2016-07-18
-:source-highlighter: highlightjs
+:source-highlighter: prettify
 :hp-image: https://sskorol.github.io/covers/docker-har.png
 
 == Browsermob Proxy Docker image

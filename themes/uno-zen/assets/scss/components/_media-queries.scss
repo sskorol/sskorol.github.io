@@ -91,10 +91,6 @@
         width: 8rem;
         margin-bottom: 1rem;
       }
-
-      > h1 {
-        margin: 0
-      }
     }
 
     > p {
@@ -106,19 +102,13 @@
     }
   }
 
-  .navigation {
-    &.left {
-      margin-top: 1.2rem;
-      margin-bottom: 1rem;
-      .links {
-        > li {
-          margin: 0;
+  .navigation.left .links {
+    > li {
+      margin: 0;
 
-          > a {
-            padding: .85rem 1.25rem;
-            font-size: 1rem;
-          }
-        }
+      > a {
+        padding: .85rem 1.25rem;
+        font-size: 1rem;
       }
     }
   }
@@ -204,7 +194,7 @@
     margin: 1rem 0;
   }
 
-  #posts-list {
+  #posts-list{
     margin: 3rem 0;
     text-align: center;
     > li {

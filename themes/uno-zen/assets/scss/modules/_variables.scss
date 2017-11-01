@@ -24,7 +24,6 @@ $cover-primary         : rgba(#49a09d, .2);
 
 $link-color            : $gray-darkest;
 $hover-color           : $primary-color;
-$mark-color            : #feda9e;
 
 $divider-color         : rgba(255, 255, 255, .14);
 
@@ -34,8 +33,13 @@ $unit                  : 1rem;
 
 $sans-font             : 'Raleway', sans-serif;
 $serif-font            : 'Roboto Slab', serif;
-$code-font             : Consolas, "Liberation Mono", Menlo, Courier, monospace;
+$code-font             : Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 $quote-font            : "freight-text-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+
+$font-weight-thin      : 100;
+$font-weight-normal    : 300;
+$font-weight-bold      : 700;
+
 $line-height           : 1.75rem;
 
 $margin-title          : $unit * 2.2;

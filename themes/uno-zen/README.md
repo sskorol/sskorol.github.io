@@ -2,13 +2,11 @@
 
 ![Last version](https://img.shields.io/github/tag/Kikobeats/uno-zen.svg?style=flat-square)
 [![Build Status](http://img.shields.io/travis/Kikobeats/uno-zen/master.svg?style=flat-square)](https://travis-ci.org/Kikobeats/uno-zen)
-![Ghost version](https://img.shields.io/badge/Ghost-1.x-brightgreen.svg?style=flat-square)
+![Ghost version](https://img.shields.io/badge/Ghost-0.7.x-brightgreen.svg?style=flat-square)
 ![Node version](https://img.shields.io/node/v/uno-zen.svg?style=flat-square)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/kikobeats)
 
 > Minimalist and Elegant theme for Ghost.
-
-**NOTE**: Commercial version is available as [Uno Urban](https://sellfy.com/p/G5kK).
 
 [<img src="http://i.imgur.com/LCSB4Ca.jpg">](http://kikobeats.com)
 
@@ -28,7 +26,7 @@
 
 ## Introduction
 
-**Uno Zen** is a theme for Ghost inspired in [Uno](https://github.com/daleanthony/Uno) but providing a set of missing features in the original theme that are aligned with minimalist design style.
+**Uno Zen** is a fork of [Uno for Ghost](https://github.com/daleanthony/Uno) that provides some features missing in the original theme.
 
 ### Whats is new in 2.x
 
@@ -57,19 +55,9 @@ Enter the theme folder (`content/themes`) of your Ghost installation and paste t
 $ curl -sSL http://git.io/vcIHr | sh
 ```
 
-### Alternative installation (to enable deployment to remote server):
-
-Run the above command inside a temporary folder.
-
-Delete the `.git` folder inside the `uno-zen` folder.
-
-Copy and paste the `uno-zen` folder into the theme folder (`content/themes`).
-
-This will add a static copy of the theme to your blog's git repository and allow changes to be tracked by git.
-
 ## Setup
 
-This theme needs a DOM selector library. The library is not provided by the theme. Instead, you need to paste one into the `Blog Footer` in the `Code injection` of your Ghost installation:
+This theme needs a DOM selector library. The library is not provided by the theme. Instead, you need to inject from the `Blog Footer` in the `Code injection` of your Ghost installation:
 
 ```html
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -130,8 +118,7 @@ See in [Documentation](https://github.com/Kikobeats/uno-zen/blob/master/DOCUMENT
 
 ## Related
 
-* [Uno Urban](https://kikobeats.github.io/uno-urban) – Commercial version of Uno Zen.
-* [Bloggy](https://github.com/Kikobeats/bloggy#bloggy-for-ghost) – Brand theme for Ghost.
+* [Bloggy](https://github.com/Kikobeats/bloggy#bloggy-for-ghost) – Branding theme for Ghost.
 
 ## License
 

@@ -2,6 +2,8 @@
 
 $ ->
 
+  isOpen = location.hash is '#open'
+
   _animate = ->
     setTimeout(->
       $('.cover').addClass 'animated'
@@ -23,4 +25,4 @@ $ ->
 
   if (Uno.is 'device', 'desktop') and (Uno.is 'page', 'home')
     _animate()
-    _expand form: 'hide' unless location.hash is '#open'
+    _expand form: 'hide' if !isOpen

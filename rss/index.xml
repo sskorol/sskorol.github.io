@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[QA Automation in Action]]></title><description><![CDATA[Useful Java-oriented articles for QAA engineers]]></description><link>https://sskorol.github.io</link><image><url>/images/back.jpg</url><title>QA Automation in Action</title><link>https://sskorol.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 01 Nov 2017 18:38:50 GMT</lastBuildDate><atom:link href="https://sskorol.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Tracking tests' network statistics with Docker]]></title><description><![CDATA[<div class="sect1">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[QA Automation in Action]]></title><description><![CDATA[Useful Java-oriented articles for QAA engineers]]></description><link>https://sskorol.github.io</link><image><url>/images/back.jpg</url><title>QA Automation in Action</title><link>https://sskorol.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 01 Nov 2017 18:40:18 GMT</lastBuildDate><atom:link href="https://sskorol.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Tracking tests' network statistics with Docker]]></title><description><![CDATA[<div class="sect1">
 <h2 id="_browsermob_proxy_docker_image">Browsermob Proxy Docker image</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -14,7 +14,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml" data-lang="yaml">seleniumhub:
+<pre class="prettyprint highlight"><code class="language-yaml" data-lang="yaml">seleniumhub:
  image: sskorol/hub:2.53.1
  ports:
  - "4444:4444"
@@ -71,7 +71,7 @@ browsermobproxy:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-handlebars" data-lang="handlebars">&lt;!DOCTYPE HTML&gt;
+<pre class="prettyprint highlight"><code class="language-handlebars" data-lang="handlebars">&lt;!DOCTYPE HTML&gt;
 &lt;html&gt;
 &lt;head&gt;
     &lt;meta charset="utf-8"&gt;
@@ -98,7 +98,7 @@ browsermobproxy:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript" data-lang="javascript">(function () {
+<pre class="prettyprint highlight"><code class="language-javascript" data-lang="javascript">(function () {
     var har = document.createElement("script");
     har.src = "http://www.softwareishard.com/har/viewer/har.js";
     har.setAttribute("id", "har");
@@ -131,7 +131,7 @@ browsermobproxy:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash" data-lang="bash">#!/bin/bash
+<pre class="prettyprint highlight"><code class="language-bash" data-lang="bash">#!/bin/bash
 PROXY_NAME=`docker ps --format {{.Names}} | grep 'proxy'`
 IP=`docker inspect --format {{.NetworkSettings.IPAddress}} $PROXY_NAME`
 echo $IP</code></pre>
@@ -151,7 +151,7 @@ echo $IP</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">this.browserMobProxy = new BrowsermobProxyRestClient(this.ip, port);
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">this.browserMobProxy = new BrowsermobProxyRestClient(this.ip, port);
 this.port = browserMobProxy.getPort();
 this.browserMobProxy.setPort(this.port);
 this.browserMobProxy.newHar(this.initialPageId, true, true, true);</code></pre>
@@ -162,7 +162,7 @@ this.browserMobProxy.newHar(this.initialPageId, true, true, true);</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">public Proxy getSeleniumProxy() {
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">public Proxy getSeleniumProxy() {
 	final String actualProxy = ip + ":" + port;
 	return new Proxy().setHttpProxy(actualProxy).setFtpProxy(actualProxy).setSslProxy(actualProxy);
 }</code></pre>
@@ -178,7 +178,7 @@ this.browserMobProxy.newHar(this.initialPageId, true, true, true);</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">CompletableFuture.supplyAsync(() -&gt; proxy.getBrowserMobProxy().getHarAsString())
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">CompletableFuture.supplyAsync(() -&gt; proxy.getBrowserMobProxy().getHarAsString())
 	.whenComplete((har, err) -&gt; {
 		if (saveHar(HTTPD_DIR + File.separator + harName, har))
 			attachHtml(attachmentName, HAR_TEMPLATE, getScope(harAddress, HAR_VIEW_HEIGHT));
@@ -191,7 +191,7 @@ this.browserMobProxy.newHar(this.initialPageId, true, true, true);</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">@Attachment(value = "{0}", type = "text/html")
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">@Attachment(value = "{0}", type = "text/html")
 public static byte[] attachHtml(String name, String templateName, Map&lt;String, Object&gt; args) {
 	String outName = "target" + File.separator + "attachment" + COUNTER.incrementAndGet();
 	try {

@@ -9,7 +9,7 @@ To be able to use the following example, you'll need to build link:https://githu
 
 == Docker configuration
 Raising newly built image would be quite simple with a help of `docker-compose`. Here's a sample BMP / Selenium Grid configuration, which will help you to link all containers together:
-[source,json]
+[source,yaml]
 ----
 seleniumhub:
  image: sskorol/hub:2.53.1

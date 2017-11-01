@@ -28,12 +28,12 @@
     "flickr": ""
   },
   "theme": {
-    "name": "uno-zen-mod"
+    "name": "the-shell"
   },
   "urls": {
     "site": "https://sskorol.github.io",
     "hubpress": "https://sskorol.github.io",
-    "theme": "//sskorol.github.io/themes/uno-zen",
+    "theme": "//sskorol.github.io/themes/uno-zen-mod",
     "images": "https://sskorol.github.io/images"
   },
   "initialisationConfigComponent": {

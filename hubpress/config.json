@@ -33,7 +33,7 @@
   "urls": {
     "site": "https://sskorol.github.io",
     "hubpress": "https://sskorol.github.io",
-    "theme": "//sskorol.github.io/themes/uno",
+    "theme": "//sskorol.github.io/themes/uno-zen",
     "images": "https://sskorol.github.io/images"
   },
   "initialisationConfigComponent": {

@@ -1,10 +1,49 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "gh-pages"
+    "username": "sskorol",
+    "repositoryName": "sskorol.github.io",
+    "branch": "gh-pages",
+    "cname": ""
+  },
+  "site": {
+    "title": "QA Automation in Action",
+    "description": "Useful Java-oriented articles for QAA engineers",
+    "logo": "/images/logo.jpg",
+    "cover": "/images/back.jpg",
+    "postsPerPage": "",
+    "disqus": "qaa-in-action",
+    "delay": "",
+    "googleAnalytics": "UA-109071709-1"
+  },
+  "socialnetwork": {
+    "email": "serhii.s.korol@gmail.com",
+    "twitter": "https://twitter.com/ss_korol",
+    "googleplus": "https://plus.google.com/u/0/+SergeyKorol",
+    "linkedin": "https://ua.linkedin.com/in/serhiikorol",
+    "github": "https://github.com/sskorol",
+    "stackoverflow": "https://stackoverflow.com/users/8461668/sergey-korol",
+    "facebook": "",
+    "instagram": "",
+    "pinterest": "",
+    "flickr": ""
   },
   "theme": {
-    "name": "Casper"
+    "name": "uno-zen"
+  },
+  "urls": {
+    "site": "https://sskorol.github.io/sskorol.github.io",
+    "hubpress": "https://sskorol.github.io/sskorol.github.io",
+    "theme": "//sskorol.github.io/sskorol.github.io/themes/uno-zen",
+    "images": "https://sskorol.github.io/sskorol.github.io/images"
+  },
+  "initialisationConfigComponent": {
+    "name": "initialise-configuration",
+    "computed": {},
+    "methods": {},
+    "staticRenderFns": [
+      null,
+      null,
+      null
+    ]
   }
 }

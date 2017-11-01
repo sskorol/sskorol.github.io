@@ -1,4 +1,4 @@
-/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+asciidoc+bash+batch+git+handlebars+java+json+kotlin+markdown+powershell+properties+scala+yaml&plugins=line-highlight+line-numbers+file-highlight+toolbar+jsonp-highlight+highlight-keywords+previewer-base+normalize-whitespace+keep-markup+data-uri-highlight+show-language+copy-to-clipboard */
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+asciidoc+bash+batch+diff+docker+git+handlebars+http+java+json+kotlin+markdown+nginx+powershell+properties+scala+sql+yaml&plugins=line-highlight+line-numbers+toolbar+show-language+copy-to-clipboard */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
@@ -129,7 +129,6 @@ pre[class*="language-"] {
 .token.bold {
   font-weight: bold;
 }
-
 .token.italic {
   font-style: italic;
 }
@@ -150,8 +149,8 @@ pre[data-line] {
   padding: inherit 0;
   margin-top: 1em; /* Same as .prism’s padding-top */
 
-  background: hsla(24, 20%, 50%, .08);
-  background: linear-gradient(to right, hsla(24, 20%, 50%, .1) 70%, hsla(24, 20%, 50%, 0));
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
 
   pointer-events: none;
 
@@ -167,7 +166,7 @@ pre[data-line] {
   left: .6em;
   min-width: 1em;
   padding: 0 .5em;
-  background-color: hsla(24, 20%, 50%, .4);
+  background-color: hsla(24, 20%, 50%,.4);
   color: hsl(24, 20%, 95%);
   font: bold 65%/1.5 sans-serif;
   text-align: center;
@@ -224,7 +223,6 @@ pre.line-numbers > code {
   padding-right: 0.8em;
   text-align: right;
 }
-
 pre.code-toolbar {
   position: relative;
 }
@@ -270,7 +268,7 @@ pre.code-toolbar > .toolbar span {
   padding: 0 .5em;
   background: #f5f2f0;
   background: rgba(224, 224, 224, 0.2);
-  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
   border-radius: .5em;
 }
 
@@ -284,71 +282,3 @@ pre.code-toolbar > .toolbar span:focus {
   text-decoration: none;
 }
 
-.prism-previewer,
-.prism-previewer:before,
-.prism-previewer:after {
-  position: absolute;
-  pointer-events: none;
-}
-
-.prism-previewer,
-.prism-previewer:after {
-  left: 50%;
-}
-
-.prism-previewer {
-  margin-top: -48px;
-  width: 32px;
-  height: 32px;
-  margin-left: -16px;
-
-  opacity: 0;
-  -webkit-transition: opacity .25s;
-  -o-transition: opacity .25s;
-  transition: opacity .25s;
-}
-
-.prism-previewer.flipped {
-  margin-top: 0;
-  margin-bottom: -48px;
-}
-
-.prism-previewer:before,
-.prism-previewer:after {
-  content: '';
-  position: absolute;
-  pointer-events: none;
-}
-
-.prism-previewer:before {
-  top: -5px;
-  right: -5px;
-  left: -5px;
-  bottom: -5px;
-  border-radius: 10px;
-  border: 5px solid #fff;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) inset, 0 0 10px rgba(0, 0, 0, 0.75);
-}
-
-.prism-previewer:after {
-  top: 100%;
-  width: 0;
-  height: 0;
-  margin: 5px 0 0 -7px;
-  border: 7px solid transparent;
-  border-color: rgba(255, 0, 0, 0);
-  border-top-color: #fff;
-}
-
-.prism-previewer.flipped:after {
-  top: auto;
-  bottom: 100%;
-  margin-top: 0;
-  margin-bottom: 5px;
-  border-top-color: rgba(255, 0, 0, 0);
-  border-bottom-color: #fff;
-}
-
-.prism-previewer.active {
-  opacity: 1;
-}

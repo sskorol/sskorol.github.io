@@ -28,12 +28,12 @@
     "flickr": ""
   },
   "theme": {
-    "name": "saga"
+    "name": "ghostium"
   },
   "urls": {
     "site": "https://sskorol.github.io",
     "hubpress": "https://sskorol.github.io",
-    "theme": "//sskorol.github.io/themes/the-shell",
+    "theme": "//sskorol.github.io/themes/saga",
     "images": "https://sskorol.github.io/images"
   },
   "initialisationConfigComponent": {

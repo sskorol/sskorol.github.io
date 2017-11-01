@@ -21,7 +21,11 @@
     "googleplus": "https://plus.google.com/u/0/+SergeyKorol",
     "linkedin": "https://ua.linkedin.com/in/serhiikorol",
     "github": "https://github.com/sskorol",
-    "stackoverflow": "https://stackoverflow.com/users/8461668/sergey-korol"
+    "stackoverflow": "https://stackoverflow.com/users/8461668/sergey-korol",
+    "facebook": "",
+    "instagram": "",
+    "pinterest": "",
+    "flickr": ""
   },
   "theme": {
     "name": "uno-zen"
@@ -29,7 +33,17 @@
   "urls": {
     "site": "https://sskorol.github.io",
     "hubpress": "https://sskorol.github.io",
-    "theme": "https://sskorol.github.io/themes/uno-zen",
+    "theme": "//sskorol.github.io/themes/uno-zen",
     "images": "https://sskorol.github.io/images"
+  },
+  "initialisationConfigComponent": {
+    "name": "initialise-configuration",
+    "computed": {},
+    "methods": {},
+    "staticRenderFns": [
+      null,
+      null,
+      null
+    ]
   }
 }
